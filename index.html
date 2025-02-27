@@ -2068,6 +2068,7 @@ Cities Section */
     @media (max-width: 768px) {
       body {
         font-size: 14px;
+        overflow-x: hidden;
       }
 
       .logo-container h1 {
@@ -2084,10 +2085,23 @@ Cities Section */
         flex-direction: column;
         padding: 20px;
         box-shadow: var(--header-shadow);
+        z-index: 1000;
       }
 
       .nav-list.active {
         display: flex;
+        animation: slideDown 0.3s ease-out;
+      }
+
+      .nav-list li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(var(--text-color), 0.1);
+      }
+
+      .nav-list li:last-child {
+        border-bottom: none;
       }
 
       .hamburger-menu {
@@ -2096,16 +2110,19 @@ Cities Section */
 
       #property-calculator .container {
         padding: 20px;
-        margin: 0 15px;
+        margin: 15px;
+        width: auto;
       }
       
       #property-calculator h2 {
         font-size: 1.8em;
+        padding: 0 10px;
       }
       
       .calculator-grid {
         grid-template-columns: 1fr;
         gap: 15px;
+        padding: 0 10px;
       }
 
       .calculator-field input {
@@ -2115,21 +2132,24 @@ Cities Section */
 
       .search-form {
         padding: 20px;
-        margin: 0 15px;
+        margin: 15px;
+        grid-template-columns: 1fr;
       }
 
       .search-form input,
       .search-form select {
-        padding: 10px 14px;
+        padding: 12px;
         font-size: 0.9rem;
       }
 
       .search-form-buttons {
         flex-direction: column;
+        gap: 10px;
       }
 
       .search-form button {
         width: 100%;
+        margin: 5px 0;
       }
 
       .since-badge {
@@ -2140,12 +2160,47 @@ Cities Section */
         padding: 4px 12px;
       }
 
-      .results-grid {
-        grid-template-columns: 1fr;
+      .result-container {
+        margin: 15px;
+        padding: 15px;
       }
-      
+
       .result {
         font-size: 1.5em;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 13px;
+      }
+
+      .logo-container h1 {
+        font-size: 1rem;
+      }
+
+      #property-calculator h2 {
+        font-size: 1.5em;
+      }
+
+      .calculator-field input {
+        padding: 10px 14px;
+        font-size: 0.9em;
+      }
+
+      .result {
+        font-size: 1.2em;
       }
     }
 
