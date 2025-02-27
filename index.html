@@ -15,16 +15,17 @@
   <style>
     /* Modern Mortgage Calculator Styles */
     #property-calculator {
-      padding: 80px 0;
+      padding: 40px 0;
       background: var(--bg-color);
       position: relative;
       overflow: hidden;
+      flex: 1;
     }
 
     #property-calculator .container {
       max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px;
+      margin: 20px auto;
+      padding: 30px;
       background: var(--card-bg);
       border-radius: 24px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -177,6 +178,10 @@
         font-size: 14px;
       }
 
+      #property-calculator {
+        padding: 20px 0;
+      }
+
       .logo-container h1 {
         font-size: 1.2rem;
       }
@@ -292,6 +297,9 @@
       background: var(--bg-color);
       line-height: 1.6;
       transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     a {
       text-decoration: none;
@@ -2068,7 +2076,10 @@ Cities Section */
     @media (max-width: 768px) {
       body {
         font-size: 14px;
-        overflow-x: hidden;
+      }
+
+      #property-calculator {
+        padding: 20px 0;
       }
 
       .logo-container h1 {
@@ -2085,23 +2096,10 @@ Cities Section */
         flex-direction: column;
         padding: 20px;
         box-shadow: var(--header-shadow);
-        z-index: 1000;
       }
 
       .nav-list.active {
         display: flex;
-        animation: slideDown 0.3s ease-out;
-      }
-
-      .nav-list li {
-        width: 100%;
-        text-align: center;
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(var(--text-color), 0.1);
-      }
-
-      .nav-list li:last-child {
-        border-bottom: none;
       }
 
       .hamburger-menu {
@@ -2110,19 +2108,16 @@ Cities Section */
 
       #property-calculator .container {
         padding: 20px;
-        margin: 15px;
-        width: auto;
+        margin: 0 15px;
       }
       
       #property-calculator h2 {
         font-size: 1.8em;
-        padding: 0 10px;
       }
       
       .calculator-grid {
         grid-template-columns: 1fr;
         gap: 15px;
-        padding: 0 10px;
       }
 
       .calculator-field input {
@@ -2132,24 +2127,21 @@ Cities Section */
 
       .search-form {
         padding: 20px;
-        margin: 15px;
-        grid-template-columns: 1fr;
+        margin: 0 15px;
       }
 
       .search-form input,
       .search-form select {
-        padding: 12px;
+        padding: 10px 14px;
         font-size: 0.9rem;
       }
 
       .search-form-buttons {
         flex-direction: column;
-        gap: 10px;
       }
 
       .search-form button {
         width: 100%;
-        margin: 5px 0;
       }
 
       .since-badge {
@@ -2160,47 +2152,12 @@ Cities Section */
         padding: 4px 12px;
       }
 
-      .result-container {
-        margin: 15px;
-        padding: 15px;
+      .results-grid {
+        grid-template-columns: 1fr;
       }
-
+      
       .result {
         font-size: 1.5em;
-      }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        font-size: 13px;
-      }
-
-      .logo-container h1 {
-        font-size: 1rem;
-      }
-
-      #property-calculator h2 {
-        font-size: 1.5em;
-      }
-
-      .calculator-field input {
-        padding: 10px 14px;
-        font-size: 0.9em;
-      }
-
-      .result {
-        font-size: 1.2em;
       }
     }
 
