@@ -2,33 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#f0a500" />
   <title>Royal Group of Real Estates - World's Best Real Estate Platform</title>
   <!-- Google Fonts & FontAwesome for icons -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/button.css">
   <script src="theme.js" defer></script>
   <script src="main.js" defer></script>
   <style>
     /* Modern Mortgage Calculator Styles */
     #property-calculator {
-      padding: 80px 0;
+      padding: 20px 0;
       background: var(--bg-color);
       position: relative;
       overflow: hidden;
+      flex: 1;
+      min-height: calc(100vh - 60px);
     }
 
     #property-calculator .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px;
+      max-width: 100%;
+      margin: 10px;
+      padding: 20px;
       background: var(--card-bg);
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
-      transform: translateY(0);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
     #property-calculator .container:hover {
@@ -48,9 +49,28 @@
 
     .calculator-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-bottom: 30px;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      #property-calculator {
+        padding: 40px 0;
+      }
+
+      #property-calculator .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 30px;
+        border-radius: 24px;
+      }
+
+      .calculator-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+      }
     }
 
     .calculator-field {
@@ -171,17 +191,82 @@
     }
 
     @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
+      #property-calculator {
+        padding: 20px 0;
+      }
+
+      .logo-container h1 {
+        font-size: 1.2rem;
+      }
+
+      .nav-list {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--header-bg);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--header-shadow);
+      }
+
+      .nav-list.active {
+        display: flex;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
       #property-calculator .container {
-        padding: 25px;
-        margin: 0 20px;
+        padding: 20px;
+        margin: 0 15px;
       }
       
       #property-calculator h2 {
-        font-size: 2em;
+        font-size: 1.8em;
       }
       
       .calculator-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .calculator-field input {
+        padding: 12px 16px;
+        font-size: 1em;
+      }
+
+      .search-form {
+        padding: 20px;
+        margin: 0 15px;
+      }
+
+      .search-form input,
+      .search-form select {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+      }
+
+      .search-form-buttons {
+        flex-direction: column;
+      }
+
+      .search-form button {
+        width: 100%;
+      }
+
+      .since-badge {
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+        font-size: 0.75em;
+        padding: 4px 12px;
       }
     }
 
@@ -229,6 +314,9 @@
       background: var(--bg-color);
       line-height: 1.6;
       transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     a {
       text-decoration: none;
@@ -1863,9 +1951,28 @@ Cities Section */
 
     .calculator-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-bottom: 30px;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      #property-calculator {
+        padding: 40px 0;
+      }
+
+      #property-calculator .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 30px;
+        border-radius: 24px;
+      }
+
+      .calculator-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+      }
     }
 
     .results-grid {
@@ -2003,17 +2110,82 @@ Cities Section */
     }
 
     @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
+      #property-calculator {
+        padding: 20px 0;
+      }
+
+      .logo-container h1 {
+        font-size: 1.2rem;
+      }
+
+      .nav-list {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--header-bg);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--header-shadow);
+      }
+
+      .nav-list.active {
+        display: flex;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
       #property-calculator .container {
-        padding: 25px;
-        margin: 0 20px;
+        padding: 20px;
+        margin: 0 15px;
       }
       
       #property-calculator h2 {
-        font-size: 2em;
+        font-size: 1.8em;
       }
       
       .calculator-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .calculator-field input {
+        padding: 12px 16px;
+        font-size: 1em;
+      }
+
+      .search-form {
+        padding: 20px;
+        margin: 0 15px;
+      }
+
+      .search-form input,
+      .search-form select {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+      }
+
+      .search-form-buttons {
+        flex-direction: column;
+      }
+
+      .search-form button {
+        width: 100%;
+      }
+
+      .since-badge {
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+        font-size: 0.75em;
+        padding: 4px 12px;
       }
 
       .results-grid {
@@ -3413,7 +3585,7 @@ Cities Section */
           <!-- Hyderabad -->
           <div class="metro-city-card">
             <div class="metro-city-image">
-              <img src="https://images.unsplash.com/photo-1572707691716-5243eec9f129" alt="Hyderabad Skyline">
+              <img src="https://images.unsplash.com/photo-1551161242-b5af797b7233?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkZXJhYmFkfGVufDB8fDB8fHww" alt="Hyderabad Skyline">
               <div class="metro-city-overlay"></div>
               <div class="metro-city-content">
                 <h3 class="metro-city-name">Hyderabad</h3>
@@ -3439,7 +3611,7 @@ Cities Section */
           <!-- Pune -->
           <div class="metro-city-card">
             <div class="metro-city-image">
-              <img src="https://images.unsplash.com/photo-1572707691716-5243eec9f129" alt="Pune Skyline">
+              <img src="https://images.unsplash.com/photo-1577195943805-d9a2f1c404bd?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pune Skyline">
               <div class="metro-city-overlay"></div>
               <div class="metro-city-content">
                 <h3 class="metro-city-name">Pune</h3>
@@ -3452,7 +3624,7 @@ Cities Section */
           <!-- Ahmedabad -->
           <div class="metro-city-card">
             <div class="metro-city-image">
-              <img src="https://images.unsplash.com/photo-1572707691716-5243eec9f129" alt="Ahmedabad Skyline">
+              <img src="https://images.unsplash.com/photo-1628269796998-7452a5d8abbc?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ahmedabad Skyline">
               <div class="metro-city-overlay"></div>
               <div class="metro-city-content">
                 <h3 class="metro-city-name">Ahmedabad</h3>
@@ -3498,10 +3670,10 @@ Cities Section */
         </div>
         
         <div class="header-actions">
-          <button class="action-btn">
+          <a href="mailto:info@royalgroup.com" class="action-btn" style="text-decoration: none;">
             <i class="fas fa-calendar-alt"></i>
             Schedule Tour
-          </button>
+          </a>
           <div class="header-icons">
             <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
               <i class="fas fa-moon"></i>
@@ -3601,7 +3773,7 @@ Cities Section */
         </div>
       </div>
       <div class="metro-city-card">
-        <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66" alt="Hyderabad">
+        <img src="https://images.unsplash.com/photo-1551161242-b5af797b7233?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkZXJhYmFkfGVufDB8fDB8fHww" alt="Hyderabad">
         <div class="metro-city-info">
           <div class="metro-city-name">Hyderabad</div>
           <div class="metro-city-properties">1,543 Properties</div>
@@ -3629,7 +3801,7 @@ Cities Section */
         </div>
       </div>
       <div class="metro-city-card">
-        <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66" alt="Ahmedabad">
+        <img src="https://images.unsplash.com/photo-1628269796998-7452a5d8abbc?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ahmedabad">
         <div class="metro-city-info">
           <div class="metro-city-name">Ahmedabad</div>
           <div class="metro-city-properties">987 Properties</div>
@@ -3639,85 +3811,164 @@ Cities Section */
   </section>
 
   <!-- Featured Properties Section -->
-  <section id="properties">
-    <div class="container">
-      <h2>Featured Properties</h2>
-      <div class="property-slider-container">
-        <div class="property-list">
-          <!-- Property Card 1 -->
-          <div class="property-card">
-            <div class="property-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Modern Apartment in Srinagar">
-              <div class="property-tags">
-                <span class="featured">Featured</span>
-                <span class="for-sale">For Sale</span>
-              </div>
-            </div>
-            <div class="property-info">
-              <h3>Modern Apartment in Srinagar</h3>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Srinagar, Kashmir</p>
-              <p class="price">₹85,00,000</p>
-              <div class="property-features">
-                <span><i class="fas fa-bed"></i> 3 Beds</span>
-                <span><i class="fas fa-bath"></i> 2 Baths</span>
-                <span><i class="fas fa-ruler-combined"></i> 1,200 sq ft</span>
-              </div>
-            </div>
+<section id="featured-properties">
+  <div class="container">
+    <h2>Featured Properties</h2>
+    <div class="property-list">
+      <!-- Existing Property Card -->
+      <div class="property-card">
+        <div class="property-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Villa">
+          <div class="property-tags">
+            <span class="property-tag">Featured</span>
+            <span class="property-tag">For Sale</span>
           </div>
-
-          <!-- Property Card: Chandigarh -->
-          <div class="property-card">
-            <div class="property-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9" alt="Luxury Villa in Chandigarh">
-              <div class="property-tags">
-                <span class="featured">Featured</span>
-                <span class="for-sale">For Sale</span>
-              </div>
-            </div>
-            <div class="property-info">
-              <h3>Luxury Villa in Chandigarh</h3>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Sector 8, Chandigarh</p>
-              <p class="price">₹2,25,00,000</p>
-              <div class="property-features">
-                <span><i class="fas fa-bed"></i> 4 Beds</span>
-                <span><i class="fas fa-bath"></i> 3 Baths</span>
-                <span><i class="fas fa-ruler-combined"></i> 2,500 sq ft</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Property Card: Goa -->
-          <div class="property-card">
-            <div class="property-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf" alt="Beachfront Villa in Goa">
-              <div class="property-tags">
-                <span class="featured">Featured</span>
-                <span class="for-sale">For Sale</span>
-              </div>
-            </div>
-            <div class="property-info">
-              <h3>Beachfront Villa in Goa</h3>
-              <p class="location"><i class="fas fa-map-marker-alt"></i> Candolim, Goa</p>
-              <p class="price">₹3,50,00,000</p>
-              <div class="property-features">
-                <span><i class="fas fa-bed"></i> 5 Beds</span>
-                <span><i class="fas fa-bath"></i> 4 Baths</span>
-                <span><i class="fas fa-ruler-combined"></i> 3,000 sq ft</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slider-nav-buttons">
-          <button class="slider-button prev-button">
-            <i class="fas fa-chevron-left"></i>
+          <button class="property-favorite">
+            <i class="fas fa-heart"></i>
           </button>
-          <button class="slider-button next-button">
-            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="card-content">
+          <h3 class="property-title">Luxury Villa in South Delhi</h3>
+          <p class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            Greater Kailash, Delhi
+          </p>
+          <div class="property-features">
+            <span class="feature">
+              <i class="fas fa-bed"></i> 4 Beds
+            </span>
+            <span class="feature">
+              <i class="fas fa-bath"></i> 3 Baths
+            </span>
+            <span class="feature">
+              <i class="fas fa-ruler-combined"></i> 3500 sq.ft
+            </span>
+          </div>
+          <div class="property-price">
+            ₹4.5 Cr <small>/ Total</small>
+          </div>
+          <button class="card-button">
+            View Details <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- New Property Card 1 -->
+      <div class="property-card">
+        <div class="property-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Modern Apartment">
+          <div class="property-tags">
+            <span class="property-tag">New Launch</span>
+            <span class="property-tag">For Sale</span>
+          </div>
+          <button class="property-favorite">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+        <div class="card-content">
+          <h3 class="property-title">Modern Apartment in Mumbai</h3>
+          <p class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            Bandra West, Mumbai
+          </p>
+          <div class="property-features">
+            <span class="feature">
+              <i class="fas fa-bed"></i> 3 Beds
+            </span>
+            <span class="feature">
+              <i class="fas fa-bath"></i> 2 Baths
+            </span>
+            <span class="feature">
+              <i class="fas fa-ruler-combined"></i> 1800 sq.ft
+            </span>
+          </div>
+          <div class="property-price">
+            ₹3.2 Cr <small>/ Total</small>
+          </div>
+          <button class="card-button">
+            View Details <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- New Property Card 2 -->
+      <div class="property-card">
+        <div class="property-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3" alt="Luxury Penthouse">
+          <div class="property-tags">
+            <span class="property-tag">Premium</span>
+            <span class="property-tag">For Sale</span>
+          </div>
+          <button class="property-favorite">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+        <div class="card-content">
+          <h3 class="property-title">Luxury Penthouse in Bangalore</h3>
+          <p class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            Indiranagar, Bangalore
+          </p>
+          <div class="property-features">
+            <span class="feature">
+              <i class="fas fa-bed"></i> 4 Beds
+            </span>
+            <span class="feature">
+              <i class="fas fa-bath"></i> 4 Baths
+            </span>
+            <span class="feature">
+              <i class="fas fa-ruler-combined"></i> 4200 sq.ft
+            </span>
+          </div>
+          <div class="property-price">
+            ₹5.8 Cr <small>/ Total</small>
+          </div>
+          <button class="card-button">
+            View Details <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- New Property Card 3 -->
+      <div class="property-card">
+        <div class="property-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d" alt="Garden House">
+          <div class="property-tags">
+            <span class="property-tag">Exclusive</span>
+            <span class="property-tag">For Sale</span>
+          </div>
+          <button class="property-favorite">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+        <div class="card-content">
+          <h3 class="property-title">Garden House in Pune</h3>
+          <p class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            Koregaon Park, Pune
+          </p>
+          <div class="property-features">
+            <span class="feature">
+              <i class="fas fa-bed"></i> 3 Beds
+            </span>
+            <span class="feature">
+              <i class="fas fa-bath"></i> 3 Baths
+            </span>
+            <span class="feature">
+              <i class="fas fa-ruler-combined"></i> 2800 sq.ft
+            </span>
+          </div>
+          <div class="property-price">
+            ₹2.9 Cr <small>/ Total</small>
+          </div>
+          <button class="card-button">
+            View Details <i class="fas fa-arrow-right"></i>
           </button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- New: Property Categories Section -->
   <section id="property-categories">
@@ -3793,7 +4044,7 @@ Cities Section */
         <!-- Plots & Land Category -->
         <div class="category-card">
           <div class="category-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1500382017468-be6161a56a0c" alt="Plots & Land">
+            <img src="https://plus.unsplash.com/premium_photo-1668456435433-fb89969b0a02?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxvdCUyMG9mJTIwbGFuZHxlbnwwfHwwfHx8MA%3D%3D" alt="Plots & Land">
             <div class="category-overlay"></div>
             <div class="category-content">
               <h3 class="category-title">Plots &amp; Land</h3>
@@ -3843,7 +4094,7 @@ Cities Section */
           </div>
         </div>
         
-        <button type="button" id="calculateBtn" class="btn btn-primary">Calculate</button>
+        <button type="button" id="calculateBtn" class="action-btn">Calculate <i class="fas fa-calculator"></i></button>
         
         <div class="results-grid">
           <div class="result-container">
@@ -4727,7 +4978,7 @@ Cities Section */
             <div class="info">
               <h4>Head Office</h4>
               <p>Royal Group of Real Estates</p>
-              <p>Near Jamia Masjid, Nowhatta</p>
+              <p>Residency Road srinager</p>
               <p>Srinagar, Jammu & Kashmir - 190002</p>
             </div>
           </div>
@@ -4737,9 +4988,9 @@ Cities Section */
             </div>
             <div class="info">
               <h4>Phone Numbers</h4>
-              <p>Main: +91 700604587</p>
-              <p>Support: +91 700604588</p>
-              <p>WhatsApp: +91 700604589</p>
+              <p>Main: +91 7006064587</p>
+              <p>Support: +91 7006064587</p>
+              <p>WhatsApp: +91 7006064587</p>
             </div>
           </div>
           <div class="contact-info-item">
@@ -4749,8 +5000,8 @@ Cities Section */
             <div class="info">
               <h4>Email Addresses</h4>
               <p>General: info@royalgroup.com</p>
-              <p>Support: support@royalgroup.com</p>
-              <p>Business: business@royalgroup.com</p>
+              <p>Support: info@royalgroup.com</p>
+              <p>Business: info@royalgroup.com</p>
             </div>
           </div>
           <div class="contact-info-item">
@@ -4762,17 +5013,6 @@ Cities Section */
               <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
               <p>Sunday: Closed (Available for appointments)</p>
               <p>Emergency Support: 24/7</p>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="icon-wrapper">
-              <i class="fas fa-building"></i>
-            </div>
-            <div class="info">
-              <h4>Branch Offices</h4>
-              <p>Jammu Office: Near Wave Mall, Jammu</p>
-              <p>Anantnag Office: KP Road, Anantnag</p>
-              <p>Baramulla Office: Main Chowk, Baramulla</p>
             </div>
           </div>
           <div class="contact-social">
@@ -4902,6 +5142,7 @@ Cities Section */
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Royal Group of Real Estates. All rights reserved.</p>
+      <p>Designed by Mussadiq Wani</p>
     </div>
   </footer>
 
