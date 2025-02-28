@@ -1,6 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#f0a500" />
+  <title>Royal Group of Real Estates - World's Best Real Estate Platform</title>
+  <!-- Google Fonts & FontAwesome for icons -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/button.css">
+  <script src="theme.js" defer></script>
+  <script src="main.js" defer></script>
+  <style>
+    /* Modern Mortgage Calculator Styles */
+    #property-calculator {
+      padding: 80px 0;
+      background: var(--bg-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #property-calculator .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px;
       background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     #property-calculator .container:hover {
@@ -20,28 +50,9 @@
 
     .calculator-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    @media (min-width: 768px) {
-      #property-calculator {
-        padding: 40px 0;
-      }
-
-      #property-calculator .container {
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 30px;
-        border-radius: 24px;
-      }
-
-      .calculator-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin-bottom: 30px;
-      }
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-bottom: 30px;
     }
 
     .calculator-field {
@@ -166,10 +177,6 @@
         font-size: 14px;
       }
 
-      #property-calculator {
-        padding: 20px 0;
-      }
-
       .logo-container h1 {
         font-size: 1.2rem;
       }
@@ -285,9 +292,6 @@
       background: var(--bg-color);
       line-height: 1.6;
       transition: background-color 0.3s ease, color 0.3s ease;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
     a {
       text-decoration: none;
@@ -1922,28 +1926,9 @@ Cities Section */
 
     .calculator-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    @media (min-width: 768px) {
-      #property-calculator {
-        padding: 40px 0;
-      }
-
-      #property-calculator .container {
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 30px;
-        border-radius: 24px;
-      }
-
-      .calculator-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin-bottom: 30px;
-      }
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-bottom: 30px;
     }
 
     .results-grid {
@@ -2083,10 +2068,6 @@ Cities Section */
     @media (max-width: 768px) {
       body {
         font-size: 14px;
-      }
-
-      #property-calculator {
-        padding: 20px 0;
       }
 
       .logo-container h1 {
