@@ -3941,160 +3941,242 @@ Cities Section */
 <section id="featured-properties">
   <div class="container">
     <h2>Featured Properties</h2>
-    <div class="property-list">
-      <!-- Existing Property Card -->
-      <div class="property-card">
-        <div class="property-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Villa">
-          <div class="property-tags">
-            <span class="property-tag">Featured</span>
-            <span class="property-tag">For Sale</span>
-          </div>
-          <button class="property-favorite">
-            <i class="fas fa-heart"></i>
-          </button>
-        </div>
-        <div class="card-content">
-          <h3 class="property-title">Luxury Villa in South Delhi</h3>
-          <p class="property-location">
-            <i class="fas fa-map-marker-alt"></i>
-            Greater Kailash, Delhi
-          </p>
-          <div class="property-features">
-            <span class="feature">
-              <i class="fas fa-bed"></i> 4 Beds
-            </span>
-            <span class="feature">
-              <i class="fas fa-bath"></i> 3 Baths
-            </span>
-            <span class="feature">
-              <i class="fas fa-ruler-combined"></i> 3500 sq.ft
-            </span>
-          </div>
-          <div class="property-price">
-            ₹4.5 Cr <small>/ Total</small>
-          </div>
-          <button class="card-button">
-            View Details <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
+    <div class="property-slider">
+      <div class="property-list">
+        <!-- Property cards will be dynamically loaded here -->
       </div>
-
-      <!-- New Property Card 1 -->
-      <div class="property-card">
-        <div class="property-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Modern Apartment">
-          <div class="property-tags">
-            <span class="property-tag">New Launch</span>
-            <span class="property-tag">For Sale</span>
-          </div>
-          <button class="property-favorite">
-            <i class="fas fa-heart"></i>
-          </button>
-        </div>
-        <div class="card-content">
-          <h3 class="property-title">Modern Apartment in Mumbai</h3>
-          <p class="property-location">
-            <i class="fas fa-map-marker-alt"></i>
-            Bandra West, Mumbai
-          </p>
-          <div class="property-features">
-            <span class="feature">
-              <i class="fas fa-bed"></i> 3 Beds
-            </span>
-            <span class="feature">
-              <i class="fas fa-bath"></i> 2 Baths
-            </span>
-            <span class="feature">
-              <i class="fas fa-ruler-combined"></i> 1800 sq.ft
-            </span>
-          </div>
-          <div class="property-price">
-            ₹3.2 Cr <small>/ Total</small>
-          </div>
-          <button class="card-button">
-            View Details <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- New Property Card 2 -->
-      <div class="property-card">
-        <div class="property-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3" alt="Luxury Penthouse">
-          <div class="property-tags">
-            <span class="property-tag">Premium</span>
-            <span class="property-tag">For Sale</span>
-          </div>
-          <button class="property-favorite">
-            <i class="fas fa-heart"></i>
-          </button>
-        </div>
-        <div class="card-content">
-          <h3 class="property-title">Luxury Penthouse in Bangalore</h3>
-          <p class="property-location">
-            <i class="fas fa-map-marker-alt"></i>
-            Indiranagar, Bangalore
-          </p>
-          <div class="property-features">
-            <span class="feature">
-              <i class="fas fa-bed"></i> 4 Beds
-            </span>
-            <span class="feature">
-              <i class="fas fa-bath"></i> 4 Baths
-            </span>
-            <span class="feature">
-              <i class="fas fa-ruler-combined"></i> 4200 sq.ft
-            </span>
-          </div>
-          <div class="property-price">
-            ₹5.8 Cr <small>/ Total</small>
-          </div>
-          <button class="card-button">
-            View Details <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- New Property Card 3 -->
-      <div class="property-card">
-        <div class="property-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d" alt="Garden House">
-          <div class="property-tags">
-            <span class="property-tag">Exclusive</span>
-            <span class="property-tag">For Sale</span>
-          </div>
-          <button class="property-favorite">
-            <i class="fas fa-heart"></i>
-          </button>
-        </div>
-        <div class="card-content">
-          <h3 class="property-title">Garden House in Pune</h3>
-          <p class="property-location">
-            <i class="fas fa-map-marker-alt"></i>
-            Koregaon Park, Pune
-          </p>
-          <div class="property-features">
-            <span class="feature">
-              <i class="fas fa-bed"></i> 3 Beds
-            </span>
-            <span class="feature">
-              <i class="fas fa-bath"></i> 3 Baths
-            </span>
-            <span class="feature">
-              <i class="fas fa-ruler-combined"></i> 2800 sq.ft
-            </span>
-          </div>
-          <div class="property-price">
-            ₹2.9 Cr <small>/ Total</small>
-          </div>
-          <button class="card-button">
-            View Details <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
+      <button class="slider-nav prev" aria-label="Previous">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-nav next" aria-label="Next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
+
+  <style>
+    /* Optimized Featured Properties Styles */
+    #featured-properties {
+      padding: 4rem 0;
+      overflow: hidden;
+    }
+
+    .property-slider {
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .property-list {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc(100% / var(--cards-per-view, 3));
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      padding: 1rem;
+    }
+
+    .property-list::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+
+    .property-card {
+      scroll-snap-align: start;
+      background: var(--card-bg);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property-image-wrapper {
+      position: relative;
+      padding-top: 66.67%; /* 3:2 Aspect ratio */
+      overflow: hidden;
+    }
+
+    .property-image-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+
+    .property-card:hover .property-image-wrapper img {
+      transform: scale(1.1);
+    }
+
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .slider-nav:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-nav.prev {
+      left: 1rem;
+    }
+
+    .slider-nav.next {
+      right: 1rem;
+    }
+
+    .slider-nav:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 1200px) {
+      .property-list {
+        --cards-per-view: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .property-list {
+        --cards-per-view: 1;
+      }
+
+      .slider-nav {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  </style>
+
+  <script>
+    // Optimized Property Card Loading and Slider
+    document.addEventListener('DOMContentLoaded', () => {
+      const propertyList = document.querySelector('.property-list');
+      const prevBtn = document.querySelector('.slider-nav.prev');
+      const nextBtn = document.querySelector('.slider-nav.next');
+
+      // Sample property data - Replace with your actual data
+      const properties = [
+        {
+          image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+          title: 'Luxury Villa in South Delhi',
+          location: 'Greater Kailash, Delhi',
+          beds: 4,
+          baths: 3,
+          area: 3500,
+          price: '4.5 Cr'
+        },
+        // Add more properties here
+      ];
+
+      // Lazy load property cards
+      function loadProperties() {
+        propertyList.innerHTML = properties.map(property => `
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img loading="lazy" src="${property.image}" alt="${property.title}">
+              <div class="property-tags">
+                <span class="property-tag">Featured</span>
+                <span class="property-tag">For Sale</span>
+              </div>
+              <button class="property-favorite" aria-label="Add to favorites">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-content">
+              <h3 class="property-title">${property.title}</h3>
+              <p class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                ${property.location}
+              </p>
+              <div class="property-features">
+                <span class="feature">
+                  <i class="fas fa-bed"></i> ${property.beds} Beds
+                </span>
+                <span class="feature">
+                  <i class="fas fa-bath"></i> ${property.baths} Baths
+                </span>
+                <span class="feature">
+                  <i class="fas fa-ruler-combined"></i> ${property.area} sq.ft
+                </span>
+              </div>
+              <div class="property-price">
+                ₹${property.price} <small>/ Total</small>
+              </div>
+              <button class="card-button">
+                View Details <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Initialize slider functionality
+      function initSlider() {
+        const scrollWidth = propertyList.scrollWidth;
+        const clientWidth = propertyList.clientWidth;
+        
+        // Update button states
+        function updateNavButtons() {
+          const scrollLeft = propertyList.scrollLeft;
+          prevBtn.disabled = scrollLeft <= 0;
+          nextBtn.disabled = scrollLeft >= scrollWidth - clientWidth;
+        }
+
+        // Scroll handlers
+        prevBtn.addEventListener('click', () => {
+          propertyList.scrollBy({
+            left: -clientWidth,
+            behavior: 'smooth'
+          });
+        });
+
+        nextBtn.addEventListener('click', () => {
+          propertyList.scrollBy({
+            left: clientWidth,
+            behavior: 'smooth'
+          });
+        });
+
+        // Update buttons on scroll
+        propertyList.addEventListener('scroll', updateNavButtons);
+        
+        // Initial button state
+        updateNavButtons();
+
+        // Update on resize
+        window.addEventListener('resize', updateNavButtons);
+      }
+
+      // Initialize
+      loadProperties();
+      initSlider();
+    });
+  </script>
 </section>
 
   <!-- New: Property Categories Section -->
