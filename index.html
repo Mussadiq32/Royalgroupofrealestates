@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#f0a500" />
   <title>Royal Group of Real Estates - World's Best Real Estate Platform</title>
   <!-- Google Fonts & FontAwesome for icons -->
@@ -2241,7 +2241,7 @@ Cities Section */
       left: 0;
       width: 40px;
       height: 2px;
-      background: var(--primary-color);
+      background: var (--primary-color);
       transition: width 0.3s ease;
     }
 
@@ -2764,7 +2764,7 @@ Cities Section */
     .feature-card h4 {
       font-size: 1.2rem;
       margin-bottom: 15px;
-      color: var(--text-color);
+      color: var (--text-color);
     }
 
     .feature-card p {
@@ -3471,6 +3471,181 @@ Cities Section */
       background: var(--primary-color);
       color: white;
       transform: scale(1.1);
+    }
+
+    /* Base responsive styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Container width fixes */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Image responsiveness */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Grid/Flex optimizations */
+    .property-list,
+    .features-list,
+    .areas-list,
+    .categories-grid,
+    .metro-cities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /* Card responsiveness */
+    .property-card,
+    .feature-card,
+    .area-card,
+    .category-card,
+    .metro-city-card {
+      width: 100%;
+      margin: 0;
+    }
+
+    /* Form responsiveness */
+    .search-form,
+    .contact-form,
+    #calculatorForm {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+    }
+
+    /* Enhanced mobile menu */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 15px;
+      }
+
+      .nav-list {
+        position: fixed;
+        top: var(--header-height);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: var(--header-bg);
+        transition: 0.3s;
+        z-index: 1000;
+      }
+
+      .nav-list.active {
+        left: 0;
+      }
+
+      .nav-list a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .header-search,
+      .header-actions {
+        display: none;
+      }
+    }
+
+    /* Better touch targets for mobile */
+    @media (max-width: 768px) {
+      button,
+      .nav-link,
+      .footer-link {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px;
+      }
+
+      input,
+      select,
+      textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        padding: 12px;
+      }
+    }
+
+    /* Fix section padding on mobile */
+    @media (max-width: 768px) {
+      section {
+        padding: 40px 0;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      .banner-content {
+        padding: 0 20px;
+      }
+    }
+
+    /* Fix calculator layout on mobile */
+    @media (max-width: 768px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-container {
+        margin-bottom: 15px;
+      }
+    }
+
+    /* Fix footer layout on mobile */
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .footer-social {
+        justify-content: center;
+      }
+    }
+
+    /* Better scrolling on mobile */
+    @media (max-width: 768px) {
+      .districts-slider {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+      }
+
+      .district-slide {
+        scroll-snap-align: start;
+        flex: 0 0 85%;
+      }
     }
   </style>
 </head>
