@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#f0a500" />
   <title>Royal Group of Real Estates - World's Best Real Estate Platform</title>
   <!-- Google Fonts & FontAwesome for icons -->
@@ -375,8 +375,6 @@
         transform: translateY(-15px);
         opacity: 1;
       }
-    }
-      clip-path: path('M30,0 C45,10 60,25 60,40 C60,55 45,60 30,60 C15,60 0,55 0,40 C0,25 15,10 30,0');
     }
 
     .building-silhouette {
@@ -1099,19 +1097,43 @@
     }
 
     .metro-cities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      overflow-x: auto;
       gap: 2rem;
       margin-top: 2rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
-
+    
     .metro-city-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
       position: relative;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
       aspect-ratio: 3/4;
+    }
+    
+    /* Add custom scrollbar styling */
+    .metro-cities-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .metro-cities-grid::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+    
+    .metro-cities-grid::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+    
+    .metro-cities-grid::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-color);
     }
 
     .metro-city-card:hover {
@@ -2241,7 +2263,7 @@ Cities Section */
       left: 0;
       width: 40px;
       height: 2px;
-      background: var (--primary-color);
+      background: var(--primary-color);
       transition: width 0.3s ease;
     }
 
@@ -2764,7 +2786,7 @@ Cities Section */
     .feature-card h4 {
       font-size: 1.2rem;
       margin-bottom: 15px;
-      color: var (--text-color);
+      color: var(--text-color);
     }
 
     .feature-card p {
@@ -2854,7 +2876,7 @@ Cities Section */
     .contact-form h3 {
       font-size: 1.8em;
       margin-bottom: 25px;
-      color: var(--secondary-color);
+      color: var(--secondary-color);;
     }
 
     .contact-info-item {
@@ -3472,181 +3494,6 @@ Cities Section */
       color: white;
       transform: scale(1.1);
     }
-
-    /* Base responsive styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      overflow-x: hidden;
-      width: 100%;
-      position: relative;
-    }
-
-    /* Container width fixes */
-    .container {
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Image responsiveness */
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Grid/Flex optimizations */
-    .property-list,
-    .features-list,
-    .areas-list,
-    .categories-grid,
-    .metro-cities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      width: 100%;
-    }
-
-    /* Card responsiveness */
-    .property-card,
-    .feature-card,
-    .area-card,
-    .category-card,
-    .metro-city-card {
-      width: 100%;
-      margin: 0;
-    }
-
-    /* Form responsiveness */
-    .search-form,
-    .contact-form,
-    #calculatorForm {
-      width: 100%;
-      max-width: 100%;
-      padding: 20px;
-    }
-
-    /* Enhanced mobile menu */
-    @media (max-width: 768px) {
-      .header-container {
-        padding: 0 15px;
-      }
-
-      .nav-list {
-        position: fixed;
-        top: var(--header-height);
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - var(--header-height));
-        background: var(--header-bg);
-        transition: 0.3s;
-        z-index: 1000;
-      }
-
-      .nav-list.active {
-        left: 0;
-      }
-
-      .nav-list a {
-        display: block;
-        padding: 15px 20px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
-
-      .header-search,
-      .header-actions {
-        display: none;
-      }
-    }
-
-    /* Better touch targets for mobile */
-    @media (max-width: 768px) {
-      button,
-      .nav-link,
-      .footer-link {
-        min-height: 44px;
-        min-width: 44px;
-        padding: 12px 20px;
-      }
-
-      input,
-      select,
-      textarea {
-        font-size: 16px; /* Prevents iOS zoom on focus */
-        padding: 12px;
-      }
-    }
-
-    /* Fix section padding on mobile */
-    @media (max-width: 768px) {
-      section {
-        padding: 40px 0;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.75rem;
-      }
-
-      .banner-content {
-        padding: 0 20px;
-      }
-    }
-
-    /* Fix calculator layout on mobile */
-    @media (max-width: 768px) {
-      .calculator-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .results-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .result-container {
-        margin-bottom: 15px;
-      }
-    }
-
-    /* Fix footer layout on mobile */
-    @media (max-width: 768px) {
-      .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .footer-section {
-        text-align: center;
-      }
-
-      .footer-social {
-        justify-content: center;
-      }
-    }
-
-    /* Better scrolling on mobile */
-    @media (max-width: 768px) {
-      .districts-slider {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 20px;
-      }
-
-      .district-slide {
-        scroll-snap-align: start;
-        flex: 0 0 85%;
-      }
-    }
   </style>
 </head>
 <body>
@@ -3797,10 +3644,41 @@ Cities Section */
         </div>
         
         <div class="header-actions">
-          <a href="mailto:info@royalgroup.com" class="action-btn" style="text-decoration: none;">
+          <a href="mailto:info@royalgroup.com" class="schedule-btn">
             <i class="fas fa-calendar-alt"></i>
-            Schedule Tour
+            Schedule Appointment
           </a>
+          <style>
+            .schedule-btn {
+              background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+              color: white;
+              padding: 10px 20px;
+              border-radius: 25px;
+              font-weight: 500;
+              font-size: 0.9rem;
+              text-decoration: none;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(240, 165, 0, 0.2);
+            }
+            
+            .schedule-btn:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 6px 20px rgba(240, 165, 0, 0.3);
+              background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            }
+            
+            .schedule-btn i {
+              font-size: 1rem;
+              transition: transform 0.3s ease;
+            }
+            
+            .schedule-btn:hover i {
+              transform: rotate(15deg);
+            }
+          </style>
           <div class="header-icons">
             <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
               <i class="fas fa-moon"></i>
@@ -3938,258 +3816,176 @@ Cities Section */
   </section>
 
   <!-- Featured Properties Section -->
-<section id="featured-properties">
-  <div class="container">
-    <h2>Featured Properties</h2>
-    <div class="property-slider">
-      <div class="property-list">
-        <!-- Property cards will be dynamically loaded here -->
-      </div>
-      <button class="slider-nav prev" aria-label="Previous">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="slider-nav next" aria-label="Next">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-  </div>
-
-  <style>
-    /* Optimized Featured Properties Styles */
-    #featured-properties {
-      padding: 4rem 0;
-      overflow: hidden;
-    }
-
-    .property-slider {
-      position: relative;
-      margin: 2rem 0;
-    }
-
-    .property-list {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: calc(100% / var(--cards-per-view, 3));
-      gap: 1.5rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox */
-      padding: 1rem;
-    }
-
-    .property-list::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Edge */
-    }
-
-    .property-card {
-      scroll-snap-align: start;
-      background: var(--card-bg);
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .property-image-wrapper {
-      position: relative;
-      padding-top: 66.67%; /* 3:2 Aspect ratio */
-      overflow: hidden;
-    }
-
-    .property-image-wrapper img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1);
-      transition: transform 0.5s ease;
-      will-change: transform;
-    }
-
-    .property-card:hover .property-image-wrapper img {
-      transform: scale(1.1);
-    }
-
-    .slider-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.8;
-      transition: all 0.3s ease;
-      z-index: 2;
-    }
-
-    .slider-nav:hover {
-      opacity: 1;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .slider-nav.prev {
-      left: 1rem;
-    }
-
-    .slider-nav.next {
-      right: 1rem;
-    }
-
-    .slider-nav:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
-
-    @media (max-width: 1200px) {
-      .property-list {
-        --cards-per-view: 2;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .property-list {
-        --cards-per-view: 1;
-      }
-
-      .slider-nav {
-        width: 35px;
-        height: 35px;
-      }
-    }
-  </style>
-
-  <script>
-    // Optimized Property Card Loading and Slider
-    document.addEventListener('DOMContentLoaded', () => {
-      const propertyList = document.querySelector('.property-list');
-      const prevBtn = document.querySelector('.slider-nav.prev');
-      const nextBtn = document.querySelector('.slider-nav.next');
-
-      // Sample property data - Replace with your actual data
-      const properties = [
-        {
-          image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
-          title: 'Luxury Villa in South Delhi',
-          location: 'Greater Kailash, Delhi',
-          beds: 4,
-          baths: 3,
-          area: 3500,
-          price: '4.5 Cr'
-        },
-        // Add more properties here
-      ];
-
-      // Lazy load property cards
-      function loadProperties() {
-        propertyList.innerHTML = properties.map(property => `
+  <section id="featured-properties">
+    <div class="container">
+      <h2>Featured Properties</h2>
+      <div class="property-slider-container">
+        <div class="property-list">
+          <!-- Property Card 1 -->
           <div class="property-card">
             <div class="property-image-wrapper">
-              <img loading="lazy" src="${property.image}" alt="${property.title}">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Luxury Villa">
               <div class="property-tags">
                 <span class="property-tag">Featured</span>
                 <span class="property-tag">For Sale</span>
               </div>
-              <button class="property-favorite" aria-label="Add to favorites">
+              <button class="property-favorite">
                 <i class="fas fa-heart"></i>
               </button>
             </div>
             <div class="card-content">
-              <h3 class="property-title">${property.title}</h3>
+              <h3 class="property-title">Luxury Villa in South Delhi</h3>
               <p class="property-location">
                 <i class="fas fa-map-marker-alt"></i>
-                ${property.location}
+                Greater Kailash, Delhi
               </p>
               <div class="property-features">
                 <span class="feature">
-                  <i class="fas fa-bed"></i> ${property.beds} Beds
+                  <i class="fas fa-bed"></i> 4 Beds
                 </span>
                 <span class="feature">
-                  <i class="fas fa-bath"></i> ${property.baths} Baths
+                  <i class="fas fa-bath"></i> 3 Baths
                 </span>
                 <span class="feature">
-                  <i class="fas fa-ruler-combined"></i> ${property.area} sq.ft
+                  <i class="fas fa-ruler-combined"></i> 3500 sq.ft
                 </span>
               </div>
               <div class="property-price">
-                ₹${property.price} <small>/ Total</small>
+                ₹4.5 Cr <small>/ Total</small>
               </div>
               <button class="card-button">
                 View Details <i class="fas fa-arrow-right"></i>
               </button>
             </div>
           </div>
-        `).join('');
-      }
 
-      // Initialize slider functionality
-      function initSlider() {
-        const scrollWidth = propertyList.scrollWidth;
-        const clientWidth = propertyList.clientWidth;
-        
-        // Update button states
-        function updateNavButtons() {
-          const scrollLeft = propertyList.scrollLeft;
-          prevBtn.disabled = scrollLeft <= 0;
-          nextBtn.disabled = scrollLeft >= scrollWidth - clientWidth;
-        }
+          <!-- Property Card 2 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Modern Apartment">
+              <div class="property-tags">
+                <span class="property-tag">New Launch</span>
+                <span class="property-tag">For Sale</span>
+              </div>
+              <button class="property-favorite">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-content">
+              <h3 class="property-title">Modern Apartment in Mumbai</h3>
+              <p class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Bandra West, Mumbai
+              </p>
+              <div class="property-features">
+                <span class="feature">
+                  <i class="fas fa-bed"></i> 3 Beds
+                </span>
+                <span class="feature">
+                  <i class="fas fa-bath"></i> 2 Baths
+                </span>
+                <span class="feature">
+                  <i class="fas fa-ruler-combined"></i> 1800 sq.ft
+                </span>
+              </div>
+              <div class="property-price">
+                ₹3.2 Cr <small>/ Total</small>
+              </div>
+              <button class="card-button">
+                View Details <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
 
-        // Scroll handlers
-        prevBtn.addEventListener('click', () => {
-          propertyList.scrollBy({
-            left: -clientWidth,
-            behavior: 'smooth'
-          });
-        });
+          <!-- Property Card 3 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3" alt="Luxury Penthouse">
+              <div class="property-tags">
+                <span class="property-tag">Premium</span>
+                <span class="property-tag">For Sale</span>
+              </div>
+              <button class="property-favorite">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-content">
+              <h3 class="property-title">Luxury Penthouse in Bangalore</h3>
+              <p class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Indiranagar, Bangalore
+              </p>
+              <div class="property-features">
+                <span class="feature">
+                  <i class="fas fa-bed"></i> 4 Beds
+                </span>
+                <span class="feature">
+                  <i class="fas fa-bath"></i> 4 Baths
+                </span>
+                <span class="feature">
+                  <i class="fas fa-ruler-combined"></i> 4200 sq.ft
+                </span>
+              </div>
+              <div class="property-price">
+                ₹5.8 Cr <small>/ Total</small>
+              </div>
+              <button class="card-button">
+                View Details <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
 
-        nextBtn.addEventListener('click', () => {
-          propertyList.scrollBy({
-            left: clientWidth,
-            behavior: 'smooth'
-          });
-        });
-
-        // Update buttons on scroll
-        propertyList.addEventListener('scroll', updateNavButtons);
-        
-        // Initial button state
-        updateNavButtons();
-
-        // Update on resize
-        window.addEventListener('resize', updateNavButtons);
-      }
-
-      // Initialize
-      loadProperties();
-      initSlider();
-    });
-  </script>
-</section>
+          <!-- Property Card 4 -->
+          <div class="property-card">
+            <div class="property-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d" alt="Garden House">
+              <div class="property-tags">
+                <span class="property-tag">Exclusive</span>
+                <span class="property-tag">For Sale</span>
+              </div>
+              <button class="property-favorite">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-content">
+              <h3 class="property-title">Garden House in Pune</h3>
+              <p class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Koregaon Park, Pune
+              </p>
+              <div class="property-features">
+                <span class="feature">
+                  <i class="fas fa-bed"></i> 3 Beds
+                </span>
+                <span class="feature">
+                  <i class="fas fa-bath"></i> 3 Baths
+                </span>
+                <span class="feature">
+                  <i class="fas fa-ruler-combined"></i> 2800 sq.ft
+                </span>
+              </div>
+              <div class="property-price">
+                ₹2.9 Cr <small>/ Total</small>
+              </div>
+              <button class="card-button">
+                View Details <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="slider-nav-buttons">
+          <button class="slider-button prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="slider-button next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- New: Property Categories Section -->
-  <section id="property-categories">
-    <div class="container">
-      <h2>Property Categories in Srinagar &amp; Jammu</h2>
-      <div class="categories-grid">
-        <!-- Residential Category -->
-        <div class="category-card">
-          <div class="category-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Residential Properties">
-            <div class="category-overlay"></div>
-            <div class="category-content">
               <h3 class="category-title">Residential Properties</h3>
               <p class="category-description">Discover your perfect home with our curated selection of residential properties.</p>
               <div class="category-stats">
@@ -5644,6 +5440,30 @@ Cities Section */
       // Update icon
       themeToggle.querySelector('i').className = 
         newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    });
+
+    // Property Slider Functionality
+    const propertyList = document.querySelector('.property-list');
+    const prevButton = document.querySelector('.slider-button.prev');
+    const nextButton = document.querySelector('.slider-button.next');
+
+    let cardWidth = 300; // Width of each property card
+    let scrollPosition = 0;
+
+    prevButton.addEventListener('click', () => {
+      scrollPosition -= cardWidth;
+      if (scrollPosition < 0) {
+        scrollPosition = 0;
+      }
+      propertyList.style.transform = `translateX(-${scrollPosition}px)`;
+    });
+
+    nextButton.addEventListener('click', () => {
+      scrollPosition += cardWidth;
+      if (scrollPosition > propertyList.scrollWidth - propertyList.clientWidth) {
+        scrollPosition = propertyList.scrollWidth - propertyList.clientWidth;
+      }
+      propertyList.style.transform = `translateX(-${scrollPosition}px)`;
     });
   </script>
 </body>
